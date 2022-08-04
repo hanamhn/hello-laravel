@@ -47,6 +47,7 @@ class PostsController extends Controller
     public function show($id)
     {
         //
+        return 'hello show function ' . $id;
     }
 
     /**
@@ -81,5 +82,16 @@ class PostsController extends Controller
     public function destroy($id)
     {
         //
+    }
+
+    public function contact()
+    {
+        return view('contact');
+    }
+
+    public function show_post($id, $name, $password)
+    {
+        // return view('post')->with('id', $id);
+        return view('post', compact('id', 'name', 'password'));
     }
 }

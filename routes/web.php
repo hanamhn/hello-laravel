@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\PostsController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -36,4 +37,9 @@ use Illuminate\Support\Facades\Route;
 // Route::group(['middleware' => ['web']], function () {
 // });
 
-Route::get('/post', 'App\Http\Controllers\PostsController@index');
+// Route::get('/post', 'App\Http\Controllers\PostsController@index');
+
+// Route::resource('posts', PostsController::class);
+
+Route::get('/contact', [PostsController::class, 'contact']);
+Route::get('/post/{id}/{name}/{password}', [PostsController::class, 'show_post']);
